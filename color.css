@@ -1,0 +1,49 @@
+body {
+    background-color:#000000;
+     color: #ffffff;
+
+     }
+#loading{
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+   }
+
+.main{
+     display: flex;
+     flex-direction: row;
+     margin-right: auto;
+     margin-left: auto;
+     align-items: center;
+     justify-content: center;
+}
+
+#maindata {text-align: center; 
+     align-content: center;}
+
+#twitter {display:inline-block;margin-right:10px;} 
+#Repo {display:inline-block;} 
+
+h1{
+     font-size: 1em;
+}
+
+.me{
+     display: flex;
+     flex-direction: column;
+	margin-right: auto;
+	margin-right: auto;
+	align-items: center;
+	justify-content: center;
+}
+
+#uppertext{
+     width:fit-content;
+   }
+
+.tables {
+    width: 80%;
+    margin-bottom: 1rem;
+    color: #212529;
+}

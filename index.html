@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>My Portfolio</title>
+        <link href="color.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Public+Sans:300,500&display=swap" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+        <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+<body>
+
+    <div id="loading">
+        <img src="loading.gif">
+    </div>
+	<div class="me">
+		<img class="userimage"id="profileImage" style=" height:100;width:100;">
+        <h2 id="fullname"><b></b></h2>
+        <p id="userbio"><b></b></p>
+        <h5 id="followersInformation"></h5>
+        <p>
+            <a id="githubLink"><button type="button" class="btn btn-primary"><i class="fab fa-github">Github</i></button></a>
+            <a href="https://facebook.com/prraaabin"><button type="button" class="btn btn-primary"><i class="fab fa-facebook-square">Facebook</i></button></a>
+            <a href="https://www.instagram.com/paaarrbin/"><button type="button" class="btn btn-primary"><i class="fab fa-instagram">Instagram</i></button></a>
+        </p>
+	</div>
+    <div class="main" id="mainData"hidden>
+      <div id="uppertext">
+            <div id="twitter"> <a class="twitter-timeline" data-width="300" data-height="400" data-theme="dark" href="https://twitter.com/paaarrbin?ref_src=twsrc%5Etfw">
+            Tweets by paaarrbin</a> 
+            </div>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        <Script>
+        fetch("https://api.github.com/users/paaarrbin")
+        .then(response => response.json())
+        .then(function(data){
+             console.log(data)
+             document.getElementById("profileImage").src = data["avatar_url"]
+             document.getElementById("fullname").textContent = data["name"]
+             document.getElementById("userbio").textContent = data["bio"]
+             document.getElementById("githubLink").href = data["html_url"]
+             document.getElementById("mainData").hidden = false
+             document.getElementById("loading").hidden = true
+        })
+        </Script>
+        <!-- responsive table -->
+        <div>
+            <h1>Github Repositories</h1>
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="table-info">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 
+                    <tr>
+                    <td>...</td>
+                    <td>...</td>
+                    <td>...</td>
+                    </tr> 
+                    -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- jquery cdn  -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <!-- custom js -->
+    <script src="main.js"></script>
+    </div>
+</body>
+</html>
